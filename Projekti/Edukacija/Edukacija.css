@@ -1,0 +1,406 @@
+html {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: url(edukacijapozadina.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    font-family: 'Roboto', sans-serif;
+    background-attachment: fixed;
+    
+}
+
+/* HEADER */
+
+.header {
+    padding: 0 5%;
+    background: rgba(255, 255, 255, 0);
+    z-index: 10;
+}
+
+.header .menu {
+    height: 0;
+    overflow: hidden;
+    clear: both;
+    list-style: none;
+    padding: 0;
+    transition: all .3s ease-out;
+}
+
+.header .logo a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header .menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.header .menu .active {
+    box-shadow: 0 -2px 0 #333 inset;
+    padding-bottom: 0.4em;
+}
+
+.header .menu li {
+    padding: 0.5em 0;
+}
+
+.header .menu a:hover {
+    padding-bottom: 0.4em;
+}
+
+.header .menu li:hover {
+    transition: ease-out all 0.2s;
+    background: rgba(204, 198, 198, 0.856);
+}
+
+header .logo {
+    float: left;
+    padding-top: 2em;
+}
+
+
+
+/* HAMBURGER IKONA */
+
+.header .menu-icon {
+    position: relative;
+    padding: 20px;
+    float: right;
+    margin-top: 2.4em;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+    background: #333;
+    display: block;
+    height: 3px;
+    width: 18px;
+    position: relative;
+    transition: all .2s ease-out;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon::before {
+    content: "";
+    background:#333;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 6px;
+    transition: all .2s ease-out;
+}
+.header .menu-icon .nav-icon::after {
+    content: "";
+    background:#333;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -6px;
+    transition: all .2s ease-out;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    height: 350px
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+/* SADRZAJ */
+
+h1 {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 5em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin: 0;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+img {
+    cursor: pointer;
+}
+
+.tekst {
+    margin-top: 5em;
+    margin-right: 5%;
+    margin-left: 50%;
+    font-size: 1.2em;
+    letter-spacing: 0.1em ;
+    line-height: 2em;
+}
+
+
+
+
+
+
+
+/* FOOTER */
+
+.footersadrzaj {
+    position: absolute;
+    max-width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 1em;
+    margin-top: 6em;
+}
+
+.footer li  {
+    display:inline-block;
+    padding: 0 1em;
+}
+
+
+.copyright {
+    display: flex;
+    align-items: center;
+}
+
+.footer ul {
+    margin: 0.2em;
+    padding: 0.2em;
+}
+
+/* RESPONZIVNOST */
+
+@media all and (min-width:768px){
+
+    
+
+    .header .menu-icon {
+        display: none;
+    }
+
+   .header .menu {
+       height: 100px;
+       margin: 0;
+       clear: none;
+       float: right;
+       display: flex;
+       align-items: center;
+   }
+
+   .header .menu li {
+       padding: 0 1.4em;
+   }
+
+
+   .header .menu li:hover {
+    transition: ease-out all 0.2s;
+    background:transparent;
+}
+
+    .header .menu li a:hover {
+        box-shadow: 0 -2px 0 #333 inset;
+        transition: all 0.2s ease-in-out;
+    }
+
+}
+
+@media all and (max-width:1700px) {
+
+
+    .footersadrzaj {
+        position: relative;
+    }
+
+    body {
+        background-position: fixed;
+        background-attachment: fixed;
+    }
+
+    .tekst {
+        margin-top: 5em;
+        margin-right: 5%;
+        margin-left: 50%;
+        font-size: 1.2em;
+        letter-spacing: 0.1em ;
+        line-height: 2em;
+    }
+}
+
+@media all and (max-width:1300px) {
+
+    h1 {
+        font-size: 4.5em;
+        margin-top: 0;
+    }
+
+
+    img {
+        margin: 1em 0;
+    }
+
+    .tekst {
+        margin-top: 5em;
+        margin-right: 5%;
+        margin-left: 50%;
+        font-size: 1.2em;
+        letter-spacing: 0.1em ;
+        line-height: 2em;
+    }
+   
+  
+}
+
+
+
+@media all and (max-width:992px) {
+
+    
+
+    .header .menu li {
+        padding: 1em 0.7em;
+    }
+
+
+    .footersadrzaj {
+        position: relative;
+    }
+
+    body {
+        background-position: fixed;
+        background-attachment: fixed;
+    }
+
+
+    h1 {
+        font-size: 4em;
+    }
+
+    .tekst {
+        margin-top: 5em;
+        margin-right: 10%;
+        margin-left: 10%;
+        font-size: 1em;
+        letter-spacing: 0.1em ;
+        line-height: 2em;
+        text-align: center;
+    }
+    
+
+}
+
+@media all and (max-width:768px){
+
+    /* HEADER */
+
+    
+    .header {
+        position: absolute;
+        top: 0;
+        width: 90%;
+        background: rgba(255, 255, 255, 0.932);
+    }
+
+
+    .header .menu .active {
+        box-shadow: none;
+    }
+
+    .header .menu .activeresponsive {
+        
+        background: rgba(204, 198, 198, 0.856);
+    }
+
+    /* SADRZAJ */
+
+    body {
+        background-position: fixed;
+        background-attachment: fixed;
+    }
+
+    h1 {
+        font-size: 3.5em;
+        margin-top: 4em ;
+        margin-bottom: 1em;
+    }
+
+    .slike {
+        flex-direction: column;
+    }
+
+    .red1 {
+        margin: 0;
+    }
+
+    .red2 {
+        margin: 0;
+    }
+
+    .red3 {
+        margin: 0;
+    }
+
+    .slika {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /* FOOTER */
+
+    .footersadrzaj {
+        position: unset;
+        max-width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: grid;
+        justify-content: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-bottom: 1em;
+        margin-top: 3em;
+    }
+
+    
+
+
+    .social {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .copyright {
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        display: inline-block;
+        text-align: center;
+        order: 2;
+ }
+
+    .footersadrzaj .social img {
+        width: 32px;
+        height: 32px;
+ }
+
+}
